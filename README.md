@@ -83,7 +83,7 @@ src/
 ## Company Information
 
 **XL Logistics**
-- GST: 32AAAFX4135F1ZK
+
 - Phone: +91 9745 0000 68
 - Email: xllogisticscokindia@gmail.com
 - Address: Corporation No 67/4805A, First Floor, Alliance Residency, Marine Drive, Kochi, Kerala - 682031

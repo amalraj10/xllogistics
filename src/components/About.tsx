@@ -98,10 +98,7 @@ const About = () => {
                   <span className="text-muted-foreground">Registered Name</span>
                   <span className="text-foreground font-medium text-right">XL Logistics</span>
                 </div>
-                <div className="flex justify-between items-start">
-                  <span className="text-muted-foreground">GST Number</span>
-                  <span className="text-foreground font-medium text-right">32AAAFX4135F1ZK</span>
-                </div>
+
                 <div className="flex justify-between items-start">
                   <span className="text-muted-foreground">Constitution</span>
                   <span className="text-foreground font-medium text-right">Partnership</span>

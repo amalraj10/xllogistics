@@ -40,10 +40,12 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 animate-fade-up animation-delay-300">
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold group w-full sm:w-auto">
-                Get a Quote
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-              </Button>
+              <a href="#contact" className="w-full sm:w-auto">
+                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold group w-full">
+                  Get a Quote
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+                </Button>
+              </a>
               <a href="#services" className="w-full sm:w-auto">
                 <Button size="lg" variant="outline" className="border-primary-foreground/50 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 font-semibold w-full">
                   Our Services

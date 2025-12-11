@@ -97,10 +97,12 @@ const Services = () => {
               </ul>
 
               {/* CTA */}
-              <Button variant="ghost" className="text-primary hover:text-accent hover:bg-accent/10 p-0 font-semibold group/btn text-sm sm:text-base">
-                Learn More
-                <span className="ml-2 group-hover/btn:translate-x-1 transition-transform">→</span>
-              </Button>
+              <a href="#contact">
+                <Button variant="ghost" className="text-primary hover:text-accent hover:bg-accent/10 p-0 font-semibold group/btn text-sm sm:text-base">
+                  Get Quote
+                  <span className="ml-2 group-hover/btn:translate-x-1 transition-transform">→</span>
+                </Button>
+              </a>
             </div>
           ))}
         </div>

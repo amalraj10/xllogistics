@@ -30,9 +30,7 @@ const Header = () => {
               <span className="xl:hidden">Email Us</span>
             </a>
           </div>
-          <div className="text-primary-foreground/80 text-xs xl:text-sm">
-            GST: 32AAAFX4135F1ZK
-          </div>
+
         </div>
       </div>
 
@@ -61,9 +59,11 @@ const Header = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-sm xl:text-base px-4 xl:px-6">
-                Get a Quote
-              </Button>
+              <a href="#contact">
+                <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-sm xl:text-base px-4 xl:px-6">
+                  Get a Quote
+                </Button>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -90,9 +90,11 @@ const Header = () => {
                   {link.name}
                 </a>
               ))}
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold w-full mt-2">
-                Get a Quote
-              </Button>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+                <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold w-full mt-2">
+                  Get a Quote
+                </Button>
+              </a>
               <div className="pt-4 border-t border-border flex flex-col gap-3 text-sm">
                 <a href="tel:+919745000068" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors p-2 rounded-lg hover:bg-secondary/50">
                   <Phone size={16} />
@@ -102,9 +104,7 @@ const Header = () => {
                   <Mail size={16} />
                   <span className="text-xs sm:text-sm">xllogisticscokindia@gmail.com</span>
                 </a>
-                <div className="text-xs text-muted-foreground/70 px-2">
-                  GST: 32AAAFX4135F1ZK
-                </div>
+
               </div>
             </div>
           </div>
