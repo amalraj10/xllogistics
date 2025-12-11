@@ -45,11 +45,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-6">
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 inline-block shadow-lg border border-white/20">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 inline-block shadow-lg border border-white/20 overflow-hidden">
                 <img 
                   src={logoImage} 
                   alt="XL Logistics" 
-                  className="h-16 sm:h-20 w-auto object-contain"
+                  className="h-16 sm:h-20 w-auto object-contain transform scale-150 sm:scale-175 hover:scale-125 transition-transform duration-300"
                 />
               </div>
             </div>

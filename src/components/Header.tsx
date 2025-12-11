@@ -41,6 +41,7 @@ const Header = () => {
             {/* Logo */}
             <a href="#home" className="flex items-center py-2 -ml-2 sm:-ml-4 md:-ml-6">
               <img 
+              style={{height:"250px"}}
                 src={logoImage} 
                 alt="XL Logistics" 
                 className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto object-contain ml-2 sm:ml-4"
