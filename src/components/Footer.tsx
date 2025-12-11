@@ -1,4 +1,6 @@
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import logoImage from "@/assets/xl-logistics-logo.png";
+import heroImage from "@/assets/hero-logistics.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -20,20 +22,38 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      {/* Main Footer */}
-      <div className="container-custom section-padding pb-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <footer className="relative overflow-hidden text-primary-foreground">
+      {/* Background Image with Overlay - Exact same as Hero */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroImage}
+          alt="XL Logistics warehouse and freight operations"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-navy-dark/85"></div>
+        {/* Animated particles */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent/30 rounded-full animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-accent/40 rounded-full animate-pulse animation-delay-200"></div>
+          <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-accent/20 rounded-full animate-pulse animation-delay-400"></div>
+        </div>
+      </div>
+      
+      {/* Main Footer Content */}
+      <div className="container-custom section-padding pb-8 sm:pb-12 relative z-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
-          <div className="lg:col-span-1">
-            <a href="#home" className="inline-block mb-6">
-              <span className="text-2xl font-heading font-bold">
-                <span className="text-accent">XL</span>
-                <span className="text-primary-foreground"> Logistics</span>
-                <span className="text-accent">»</span>
-              </span>
-            </a>
-            <p className="text-primary-foreground/80 mb-6 leading-relaxed">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="mb-6">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 inline-block shadow-lg border border-white/20">
+                <img 
+                  src={logoImage} 
+                  alt="XL Logistics" 
+                  className="h-16 sm:h-20 w-auto object-contain"
+                />
+              </div>
+            </div>
+            <p className="text-primary-foreground/90 mb-6 leading-relaxed text-base">
               Your trusted partner for comprehensive logistics solutions. 
               We deliver excellence across the globe with reliability and precision.
             </p>
@@ -42,9 +62,9 @@ const Footer = () => {
                 <a
                   key={i}
                   href="#"
-                  className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
+                  className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-accent hover:scale-110 transition-all duration-300 border border-white/20"
                 >
-                  <Icon size={18} />
+                  <Icon size={20} />
                 </a>
               ))}
             </div>
@@ -52,14 +72,15 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-6">Quick Links</h4>
+            <h4 className="font-heading font-bold text-lg mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-primary-foreground/80 hover:text-accent transition-colors"
+                    className="text-primary-foreground/80 hover:text-accent hover:translate-x-2 transition-all duration-300 flex items-center group"
                   >
+                    <span className="w-2 h-2 bg-accent rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
                     {link.name}
                   </a>
                 </li>
@@ -69,14 +90,15 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-6">Our Services</h4>
+            <h4 className="font-heading font-bold text-lg mb-6 text-white">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
                   <a
                     href="#services"
-                    className="text-primary-foreground/80 hover:text-accent transition-colors"
+                    className="text-primary-foreground/80 hover:text-accent hover:translate-x-2 transition-all duration-300 flex items-center group"
                   >
+                    <span className="w-2 h-2 bg-accent rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
                     {service}
                   </a>
                 </li>
@@ -85,27 +107,33 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h4 className="font-heading font-semibold text-lg mb-6">Contact Us</h4>
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h4 className="font-heading font-bold text-lg mb-6 text-white">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex gap-3">
-                <MapPin className="text-accent shrink-0 mt-1" size={18} />
-                <span className="text-primary-foreground/80 text-sm">
+                <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center shrink-0">
+                  <MapPin className="text-accent" size={18} />
+                </div>
+                <span className="text-primary-foreground/90 text-sm leading-relaxed">
                   Corporation No 67/4805A, First Floor,
                   Alliance Residency, Marine Drive,
                   Kochi, Kerala - 682031
                 </span>
               </li>
               <li>
-                <a href="tel:+919745000068" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors">
-                  <Phone className="text-accent" size={18} />
+                <a href="tel:+919745000068" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors group">
+                  <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+                    <Phone className="text-accent" size={18} />
+                  </div>
                   <span>+91 9745 0000 68</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:xllogisticscokindia@gmail.com" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors">
-                  <Mail className="text-accent" size={18} />
-                  <span className="text-sm">xllogisticscokindia@gmail.com</span>
+                <a href="mailto:xllogisticscokindia@gmail.com" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors group">
+                  <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+                    <Mail className="text-accent" size={18} />
+                  </div>
+                  <span className="text-sm break-all">xllogisticscokindia@gmail.com</span>
                 </a>
               </li>
             </ul>
@@ -114,11 +142,10 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-primary-foreground/10">
+      <div className="border-t border-primary-foreground/10 relative z-10">
         <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/70">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/70">
             <p>© {currentYear} XL Logistics. All rights reserved.</p>
-            <p>GST: 32AAAFX4135F1ZK</p>
           </div>
         </div>
       </div>

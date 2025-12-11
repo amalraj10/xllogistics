@@ -42,24 +42,31 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="section-padding bg-secondary/50">
-      <div className="container-custom">
+    <section id="services" className="section-padding bg-gradient-to-br from-secondary/30 via-background to-secondary/50 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 bg-accent/10 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-primary/5 rounded-full blur-xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-12 h-12 bg-accent/5 rounded-full blur-lg"></div>
+      </div>
+      <div className="container-custom relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
+        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
+          <span className="inline-block text-accent font-semibold text-xs sm:text-sm uppercase tracking-wider mb-3 sm:mb-4">
             What We Offer
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4 sm:mb-6">
             Our <span className="text-primary">Services</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed px-4">
             Comprehensive logistics solutions tailored to meet your business needs. 
             From pickup to delivery, we ensure your cargo reaches its destination safely and on time.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={service.title}
@@ -67,30 +74,30 @@ const Services = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/10 transition-colors">
-                <service.icon className="text-primary group-hover:text-accent transition-colors" size={32} />
+              <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl flex items-center justify-center mb-6 group-hover:from-accent/20 group-hover:to-accent/10 transition-all duration-300 border border-primary/10 group-hover:border-accent/20 group-hover:scale-110">
+                <service.icon className="text-primary group-hover:text-accent transition-colors duration-300" size={28} />
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-heading font-semibold text-foreground mb-3">
+              <h3 className="text-lg sm:text-xl font-heading font-semibold text-foreground mb-2 sm:mb-3">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-muted-foreground mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
                 {service.description}
               </p>
 
               {/* Features */}
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                  <li key={feature} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+                    <span className="w-1.5 h-1.5 bg-accent rounded-full shrink-0"></span>
                     {feature}
                   </li>
                 ))}
               </ul>
 
               {/* CTA */}
-              <Button variant="ghost" className="text-primary hover:text-accent hover:bg-accent/10 p-0 font-semibold group/btn">
+              <Button variant="ghost" className="text-primary hover:text-accent hover:bg-accent/10 p-0 font-semibold group/btn text-sm sm:text-base">
                 Learn More
                 <span className="ml-2 group-hover/btn:translate-x-1 transition-transform">→</span>
               </Button>
@@ -98,22 +105,7 @@ const Services = () => {
           ))}
         </div>
 
-        {/* CTA Banner */}
-        <div className="mt-16 bg-primary rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary to-navy-dark opacity-90"></div>
-          <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mb-4">
-              Need a Custom Solution?
-            </h3>
-            <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
-              Our team of logistics experts is ready to design a tailored solution 
-              that perfectly fits your business requirements.
-            </p>
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
-              Contact Us Today
-            </Button>
-          </div>
-        </div>
+
       </div>
     </section>
   );

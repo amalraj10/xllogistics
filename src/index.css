@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* XL Logistics Brand Colors - Navy Blue & Red */
+    /* XL Logistics Brand Colors - Custom Blue #2c2a7d */
     --background: 0 0% 100%;
     --foreground: 220 30% 15%;
 
@@ -16,8 +16,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 30% 15%;
 
-    /* Primary - Navy Blue */
-    --primary: 215 55% 25%;
+    /* Primary - Custom Blue #2c2a7d */
+    --primary: 244 48% 32%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary - Light Gray */
@@ -28,8 +28,8 @@
     --muted: 220 15% 96%;
     --muted-foreground: 220 10% 45%;
 
-    /* Accent - Red */
-    --accent: 0 85% 45%;
+    /* Accent - Red (toned down) */
+    --accent: 0 70% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -37,30 +37,30 @@
 
     --border: 220 15% 90%;
     --input: 220 15% 90%;
-    --ring: 215 55% 25%;
+    --ring: 244 48% 32%;
 
     --radius: 0.5rem;
 
     /* Custom brand colors */
-    --navy: 215 55% 25%;
-    --navy-dark: 215 60% 18%;
-    --navy-light: 215 45% 35%;
-    --brand-red: 0 85% 45%;
-    --brand-red-dark: 0 85% 38%;
-    --brand-red-light: 0 80% 55%;
+    --navy: 244 48% 32%;
+    --navy-dark: 244 55% 25%;
+    --navy-light: 244 40% 40%;
+    --brand-red: 0 70% 40%;
+    --brand-red-dark: 0 70% 35%;
+    --brand-red-light: 0 65% 45%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(215 55% 25% / 0.95), hsl(215 60% 18% / 0.9));
-    --gradient-cta: linear-gradient(135deg, hsl(0 85% 45%), hsl(0 85% 38%));
-    --gradient-navy: linear-gradient(180deg, hsl(215 55% 25%), hsl(215 60% 18%));
+    --gradient-hero: linear-gradient(135deg, hsl(244 48% 32% / 0.95), hsl(244 55% 25% / 0.9));
+    --gradient-cta: linear-gradient(135deg, hsl(0 70% 40%), hsl(0 70% 35%));
+    --gradient-navy: linear-gradient(180deg, hsl(244 48% 32%), hsl(244 55% 25%));
 
     /* Shadows */
     --shadow-sm: 0 1px 2px hsl(220 30% 15% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(220 30% 15% / 0.1), 0 2px 4px -2px hsl(220 30% 15% / 0.1);
     --shadow-lg: 0 10px 15px -3px hsl(220 30% 15% / 0.1), 0 4px 6px -4px hsl(220 30% 15% / 0.1);
     --shadow-xl: 0 20px 25px -5px hsl(220 30% 15% / 0.1), 0 8px 10px -6px hsl(220 30% 15% / 0.1);
-    --shadow-card: 0 4px 20px hsl(215 55% 25% / 0.08);
-    --shadow-card-hover: 0 8px 30px hsl(215 55% 25% / 0.15);
+    --shadow-card: 0 4px 20px hsl(244 48% 32% / 0.08);
+    --shadow-card-hover: 0 8px 30px hsl(244 48% 32% / 0.15);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -133,11 +133,11 @@
 
 @layer components {
   .section-padding {
-    @apply py-16 md:py-24 px-4 md:px-8;
+    @apply py-12 md:py-16 lg:py-24 px-4 sm:px-6 md:px-8;
   }
 
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .text-gradient-navy {
@@ -153,11 +153,66 @@
   }
 
   .card-service {
-    @apply bg-card rounded-xl p-6 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-300 border border-border/50;
+    @apply bg-card rounded-xl p-4 sm:p-6 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-300 border border-border/50;
   }
 
   .card-service:hover {
     @apply -translate-y-1;
+  }
+
+  /* Responsive text utilities */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  /* Responsive spacing utilities */
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 md:gap-8;
+  }
+
+  .gap-responsive-lg {
+    @apply gap-6 sm:gap-8 md:gap-12;
+  }
+
+  /* Modern UI enhancements */
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+
+  .pulse-glow {
+    @apply animate-pulse shadow-lg shadow-accent/20;
   }
 }
 
@@ -204,5 +259,33 @@
     to {
       opacity: 1;
     }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(5deg);
+    }
+  }
+
+  @keyframes slowPulse {
+    0%, 100% {
+      opacity: 0.1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.2;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slow-pulse {
+    animation: slowPulse 4s ease-in-out infinite;
   }
 }
