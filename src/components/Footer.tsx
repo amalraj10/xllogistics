@@ -12,14 +12,24 @@ const Footer = () => {
     { name: "Contact", href: "#contact" },
   ];
 
-  const services = [
-    "Air Freight",
-    "Sea Freight",
-    "Road Transport",
-    "Warehousing",
-    "Customs Clearance",
-    "Project Cargo",
-  ];
+  const locations = {
+    india: [
+      "Calicut",
+      "Cochin (Head Office)",
+      "Thiruvananthapuram",
+      "Chennai",
+      "Mangaluru",
+      "Bengaluru",
+      "Mumbai",
+      "Mundra",
+      "Delhi"
+    ],
+    international: [
+      "Dubai, UAE",
+      "Qatar",
+      "Saudi Arabia"
+    ]
+  };
 
   return (
     <footer className="relative overflow-hidden text-primary-foreground">
@@ -88,22 +98,33 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Our Locations */}
           <div>
-            <h4 className="font-heading font-bold text-lg mb-6 text-white">Our Services</h4>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#services"
-                    className="text-primary-foreground/80 hover:text-accent hover:translate-x-2 transition-all duration-300 flex items-center group"
-                  >
-                    <span className="w-2 h-2 bg-accent rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <h4 className="font-heading font-bold text-lg mb-6 text-white">Our Locations</h4>
+            <div className="space-y-4">
+              <div>
+                <h5 className="font-semibold text-accent mb-2 text-sm">India</h5>
+                <ul className="space-y-2">
+                  {locations.india.map((location) => (
+                    <li key={location} className="text-primary-foreground/80 text-sm flex items-center">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></span>
+                      {location}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h5 className="font-semibold text-accent mb-2 text-sm">International</h5>
+                <ul className="space-y-2">
+                  {locations.international.map((location) => (
+                    <li key={location} className="text-primary-foreground/80 text-sm flex items-center">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></span>
+                      {location}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Contact Info */}
